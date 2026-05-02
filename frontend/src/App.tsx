@@ -795,8 +795,6 @@ else:
 
 function App() {
   const [view, setView] = useState<'main' | 'pipeline'>('main');
-  const [htmlFile, setHtmlFile] = useState<File | null>(null);
-  const [htmlPreviewURL, setHtmlPreviewURL] = useState<string | null>(null);
 
   const [code, setCode] = useState(DEFAULT_CODE);
   const [file, setFile] = useState<File | null>(null);
@@ -838,13 +836,6 @@ function App() {
     }
   };
 
-  const handleHtmlFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      const selectedFile = e.target.files[0];
-      setHtmlFile(selectedFile);
-      setHtmlPreviewURL(URL.createObjectURL(selectedFile));
-    }
-  };
 
   const handleRun = async () => {
     if (!file) {
