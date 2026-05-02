@@ -314,12 +314,18 @@ body {
 }
 
 .btn-outline-small {
+  background: transparent;
   border: 1px solid var(--pill-border);
   color: var(--pill-text);
   border-radius: 8px;
   padding: 0.3rem 0.55rem;
   font-size: 1.1rem;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-small:hover {
+  background: var(--pill-bg);
 }
 
 .settings-btn {
