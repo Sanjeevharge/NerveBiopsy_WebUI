@@ -1110,26 +1110,7 @@ function App() {
                     </div>
                   )}
 
-                  {/* Logs if any */}
-                  {result.stdout && (
-                    <div className="logs-block">
-                      <span className="section-caption">Standard Output</span>
-                      <div className="logs-terminal">
-                        <div className="terminal-header">
-                          <span className="dot red" />
-                          <span className="dot yellow" />
-                          <span className="dot green" />
-                        </div>
-                        <pre className="logs">
-                          {result.stdout.split('\n').map((line: string, idx: number) => (
-                            <div className={line.trim().startsWith('[*]') ? 'log-highlight' : ''} key={`${idx}-${line}`}>
-                              {line || ' '}
-                            </div>
-                          ))}
-                        </pre>
-                      </div>
-                    </div>
-                  )}
+                  {/* Standard Output block removed */}
 
                   {/* Image Gallery */}
                   {result.images && result.images.length > 0 && (
@@ -1171,7 +1152,7 @@ function App() {
             </div>
           </div>
         ) : (
-          <div className="pipeline-view" style={{ display: 'flex', flexDirection: 'column', padding: '2rem', height: '100%', gap: '1.5rem', flex: 1 }}>
+          <div className="pipeline-view" style={{ display: 'flex', flexDirection: 'column', padding: '0.5rem 1rem', height: '100%', gap: '1rem', flex: 1 }}>
             <div className="pipeline-header" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
               <button className="btn-run" onClick={() => setView('main')} style={{ padding: '0.8rem 1.5rem', backgroundColor: 'var(--panel)', border: '1px solid var(--glass-border)', cursor: 'pointer', borderRadius: '8px', color: 'var(--text-main)' }}>
                 ← Back to Analysis
@@ -1193,7 +1174,7 @@ function App() {
               {/* 2nd half: Text Content */}
               <div className="pipeline-text-container glass panel-shell" style={{ flex: 1, overflowY: 'auto', padding: '1.5rem' }}>
                 <div className="panel-label">Pipeline Steps</div>
-                <ul style={{ lineHeight: '1.8', fontSize: '1rem', paddingLeft: '1.5rem', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.8rem', marginTop: '1rem' }}>
+                <ul style={{ lineHeight: '1.8', fontSize: '1.2rem', paddingLeft: '1.5rem', color: 'var(--text-main)', display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
                   <li><strong>Image input</strong> — Reads the source PNG from disk using OpenCV. If the file can't be loaded, the pipeline halts immediately. Output: a raw BGR image array.</li>
                   <li><strong>Full-image analysis</strong> — Converts the image to grayscale, applies Laplacian edge detection, then builds a local variance "blur map" using a 7×7 kernel. Multi-source BFS clustering is run on that map, and a median filter (65×65) smooths the result into a binary mask. Outputs: the blurred-region mask + area metrics (total fascicle area, blurred area, non-blurred area in µm²).</li>
                   <li><strong>Tissue mask builder</strong> — Converts the image to HSV colour space and thresholds on saturation (S &gt; 15) and brightness (V &lt; 250) to isolate actual tissue from background. Morphological open/close operations clean up noise. Output: a binary tissue mask used to discard detections that fall outside tissue.</li>

@@ -11,10 +11,11 @@
     color: #1a1a18;
     padding: 32px 20px 60px;
     min-height: 100vh;
+    min-width: 1000px;
   }
   h1 {
     text-align: center;
-    font-size: 15px;
+    font-size: 32px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -22,14 +23,14 @@
     margin-bottom: 36px;
   }
   .pipeline {
-    max-width: 820px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .section-label {
-    font-size: 10px;
+    font-size: 22px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -38,8 +39,8 @@
     text-align: center;
   }
   .connector {
-    width: 1px;
-    height: 22px;
+    width: 2px;
+    height: 36px;
     background: #b4b2a9;
     margin: 0 auto;
   }
@@ -48,24 +49,24 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: 100%;
   }
-  .arr { font-size: 18px; color: #888780; flex-shrink: 0; }
+  .arr { font-size: 32px; color: #888780; flex-shrink: 0; margin: 0 10px; }
   .node {
-    border-radius: 10px;
-    padding: 11px 16px;
-    font-size: 13px;
+    border-radius: 12px;
+    padding: 16px 24px;
+    font-size: 24px;
     font-weight: 600;
     text-align: center;
-    min-width: 120px;
-    max-width: 155px;
+    min-width: 220px;
+    max-width: 320px;
     line-height: 1.4;
   }
   .node .sub {
-    font-size: 10px;
+    font-size: 18px;
     font-weight: 400;
-    margin-top: 3px;
+    margin-top: 8px;
     line-height: 1.3;
     opacity: 0.85;
   }
@@ -75,22 +76,22 @@
   .amber  { background: #633806; color: #FAC775; }
   .green  { background: #27500A; color: #C0DD97; }
   .img-node {
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid #d3d1c7;
-    min-width: 130px;
-    max-width: 160px;
+    border: 2px solid #d3d1c7;
+    min-width: 220px;
+    max-width: 320px;
     background: #fff;
     cursor: pointer;
     transition: transform 0.15s, border-color 0.15s;
   }
   .img-node:hover { transform: scale(1.04); border-color: #888780; }
-  .img-node img { width: 100%; height: 90px; object-fit: cover; display: block; }
+  .img-node img { width: 100%; height: 180px; object-fit: cover; display: block; }
   .img-node .cap {
-    font-size: 10px;
+    font-size: 18px;
     font-weight: 500;
     color: #5f5e5a;
-    padding: 5px 8px 6px;
+    padding: 12px 14px 14px;
     text-align: center;
     line-height: 1.3;
   }
@@ -119,8 +120,8 @@
     position: relative;
   }
   #modal-box img { width: 100%; border-radius: 8px; margin-bottom: 12px; }
-  #modal-title { font-size: 14px; font-weight: 600; color: #1a1a18; margin-bottom: 4px; }
-  #modal-desc  { font-size: 12px; color: #5f5e5a; line-height: 1.6; }
+  #modal-title { font-size: 22px; font-weight: 600; color: #1a1a18; margin-bottom: 6px; }
+  #modal-desc  { font-size: 18px; color: #5f5e5a; line-height: 1.6; }
   #modal-close {
     position: absolute; top: 12px; right: 14px;
     font-size: 20px; cursor: pointer;
